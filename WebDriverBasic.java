@@ -8,6 +8,8 @@ public class WebDriverBasic {
 
 	public static void main(String[] args) throws Exception {
 		WebDriver driver;
+		String username = System.getenv("SAUCE_USERNAME");
+		String accessKey = System.getenv("SAUCE_ACCESS_KEY");
 	
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platform", "Windows 8");
@@ -15,7 +17,7 @@ public class WebDriverBasic {
 		capabilities.setCapability("version", "36");
 		capabilities.setCapability("name", "Basic Java WebDriver Test");
 
-		driver = new RemoteWebDriver(new URL("http://awilbur:3fad902d-fb2e-4350-9689-b4100aba43a4@ondemand.saucelabs.com:80/wd/hub"), capabilities);
+		driver = new RemoteWebDriver(new URL("http://"+username+":"+accessKey+"@ondemand.saucelabs.com:80/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         
         driver.get("http://www.amazon.com/");
