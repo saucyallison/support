@@ -14,7 +14,7 @@ public class WebDriverBasic {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platform", "Windows 8");
 		capabilities.setCapability("browserName", "Chrome");
-		capabilities.setCapability("version", "36");
+		capabilities.setCapability("version", "37");
 		capabilities.setCapability("name", "Basic Java WebDriver Test");
 
 		driver = new RemoteWebDriver(new URL("http://"+username+":"+accessKey+"@ondemand.saucelabs.com:80/wd/hub"), capabilities);
