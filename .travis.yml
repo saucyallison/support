@@ -1,8 +1,6 @@
 language: python
 python:
-- '3.3'
 - '2.7'
-- '2.6'
 install: pip install selenium
 script: python test.py
 addons:
@@ -12,5 +10,6 @@ addons:
       secure: Zgu9UzkBEnMSB9IPKwfhjtpL3EZxiIOK168VqRupCeeP/6eXi12u6/N8TEqpPx5ewDYgdclsR5zR/EpVtPQsbSvTesKZbEWzyl3nzrJctiPNAkkpGPLwrRuQkQ/9cQQUivl4X/C0n8F6VLu6k0r3InEzRZ/3nT70hUHJd3qkEn0=
 env:
   global:
-  - secure: QnMkKNwQ5+5vTDkLQ18kF9rluiKP6hKrYYGpq9e6fGYoss868yRTTge0kooBTiOzePT5vQYkfRtkO+YrOvJ4c4jPgTBao5/+/dieg5qvodTnHKJ0FFyCJl2vh5xOQw/OJtsvayoGIQssmoWspvNDL5mwcvxN3VH0NuM41Qlbrgs=
-  - secure: XJaNtUwUk3Ww5EcgAbQxR/c976CKrhkTOYDd9gNi7mXhOcTwR6+TgjEq2Xph1ZwZpAnS2HiVXyop4+JoizkkHQk520apfAK1e3higEndmSspiLFr4GmLgJY2sfKgpABRCrncf9VX87bjJux9zRSHZDidXOFrrCWnx6u6PDyVpTw=
+    - secure: GiU33nD0egvbsgBdRS2bJalSRPSWYSEjFntvk88df5wTRagpjXTphFdNOdNh527/T16fgGpQadaUCEQtJY+ZrmbBTrUpED++I1axVJ4Lnn1qzmuY5yGfAYA48ygRGzEhGrp1pI4CB/vovMcU5SX7JPm2QBhoF1olUnA8OUQoM08=
+    - secure: WpzTn6NwTu3sR44EPVcjnxRIZmBv5iTtQWbEo6lzQC4y+RcV/a2AiUxNT6k4c5+QRi1IuA84Bg1c5X2sHlt3l6EhdWIyyVUU962ueQ1yhGvoPZs+4W8JM6ocy66WPVMOXXoOEHpMsBlbJxUwXp0NAueYMSoMbrj/DFT9vccyggY=
+
