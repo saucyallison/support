@@ -1,11 +1,8 @@
-language: php
-php:
-  - 5.4
-  - hhvm
-install: curl -s https://raw.githubusercontent.com/jlipps/sausage-bun/master/givememysausage.php | SAUCE_USERNAME=awilbursub2 SAUCE_ACCESS_KEY=1fd7b34d-55ee-4cb5-9302-2b471259631e php
-script: vendor/bin/phpunit WebDriverDemo.php
-
-env:
-  global:
-  - secure: XUAxllkH156nNjEQC7MOyn0HhAlEhnbAFaXyjdqNrp5sNl/51mVrT76EqJZNwCy0iFom0Ae6wUKVDqR48tp93WzpiEsIvocMUUe3HvIyD2JyKrY/cAELGnytMkNY1IErIuoi1QrmRD4HIvhS8CVDRKpVErmONg+C+2gzwrYJ35I=
-  - secure: TtkDLBQD0PfKszKIclJ/6o397Pn/wzktUO3jTnK9srzz6Ykw/kObleKTVLuSZFIKvxuLA8dKJOTZE17fRGTXw243Mm96ZcuQ+Tp0EOH1diMr2U69yXQqCP+sn4CFNaH0nV19T7NYKWg8NwHrci+h0TaKTq/TkEJoh31Bm0ICn3Y=
+language: node_js 
+before_script: 
+- "npm install -g se-interpreter" 
+script: 
+- "se-interpreter test.json" 
+env: 
+  matrix: 
+  - SAUCE_PLATFORM='Windows 7' SAUCE_BROWSER='googlechrome' SAUCE_BROWSER_VERSION='37'
