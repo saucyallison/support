@@ -3,6 +3,10 @@ before_script:
 - "npm install -g se-interpreter" 
 script: 
 - "se-interpreter test.json" 
-env: 
+
+env:
+  global:
+  - secure: XUAxllkH156nNjEQC7MOyn0HhAlEhnbAFaXyjdqNrp5sNl/51mVrT76EqJZNwCy0iFom0Ae6wUKVDqR48tp93WzpiEsIvocMUUe3HvIyD2JyKrY/cAELGnytMkNY1IErIuoi1QrmRD4HIvhS8CVDRKpVErmONg+C+2gzwrYJ35I=
+  - secure: TtkDLBQD0PfKszKIclJ/6o397Pn/wzktUO3jTnK9srzz6Ykw/kObleKTVLuSZFIKvxuLA8dKJOTZE17fRGTXw243Mm96ZcuQ+Tp0EOH1diMr2U69yXQqCP+sn4CFNaH0nV19T7NYKWg8NwHrci+h0TaKTq/TkEJoh31Bm0ICn3Y=
   matrix: 
   - SAUCE_PLATFORM='Windows 7' SAUCE_BROWSER='googlechrome' SAUCE_BROWSER_VERSION='37'
