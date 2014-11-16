@@ -17,6 +17,14 @@ public class WebDriverBasic {
 		capabilities.setCapability("version", "37");
 		capabilities.setCapability("name", "Basic Java WebDriver Test");
 
+		// print out some environment variables, for funs
+		String[] envVars = {"SAUCE_USERNAME", "SUPER_HAPPY_FUN_VAR", "BUILD_NUMBER", "BUILD_ID"};
+
+		for (String v : envVars) {
+			String output = System.getenv(v) || "";
+			System.out.println(v + " : " );
+		}
+
 		driver = new RemoteWebDriver(new URL("http://"+username+":"+accessKey+"@ondemand.saucelabs.com:80/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         
