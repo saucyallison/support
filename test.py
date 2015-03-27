@@ -17,7 +17,7 @@ class Selenium2OnSauce(unittest.TestCase):
         cap['browserName'] = 'firefox'
         cap['version'] = '32' 
         cap['name'] = 'Travis test'    
-        # cap['tunnelIdentifier'] = 'yes'    
+        cap['tunnelIdentifier'] = os.getenv('SAUCE_TUNNEL_IDENTIFIER')   
 
         self.driver = webdriver.Remote(
             desired_capabilities=cap,
