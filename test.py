@@ -16,7 +16,8 @@ class Selenium2OnSauce(unittest.TestCase):
         cap['platform'] = 'Windows 7'
         cap['browserName'] = 'firefox'
         cap['version'] = '32' 
-        cap['name'] = 'Travis test'        
+        cap['name'] = 'Travis test'    
+        # cap['tunnelIdentifier'] = 'yes'    
 
         self.driver = webdriver.Remote(
             desired_capabilities=cap,
