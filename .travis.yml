@@ -2,7 +2,7 @@ language: php
 php:
   - 5.6
 install: curl -s https://raw.githubusercontent.com/jlipps/sausage-bun/master/givememysausage.php | SAUCE_USERNAME=awilbur_sub SAUCE_ACCESS_KEY=9c7ed686-c466-4d95-bd8b-4c69bf8469ec php
-script: vendor/bin/phpunit WebDriverDemo.php
+script: vendor/bin/paratest -p 8 -f --phpunit=vendor/bin/phpunit WebDriverDemo.php
 
 env:
   global:
