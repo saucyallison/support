@@ -1,6 +1,6 @@
 language: python
 python:
-- '3.4'
+- '2.7'
 before_install: export SAUCE_TUNNEL_IDENTIFIER=$TRAVIS_JOB_NUMBER
 install:
 - pip install selenium pytest pytest-xdist sauceclient
