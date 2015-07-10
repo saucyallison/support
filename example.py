@@ -57,6 +57,31 @@ browsers = [{"platform": "Mac OS X 10.9",
              {"platform": "Windows 8",
              "browserName": "firefox",
              "version": "35"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+             {"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+
              ]
 
 
@@ -66,7 +91,7 @@ def on_platforms(platforms):
         for i, platform in enumerate(platforms):
             d = dict(base_class.__dict__)
             d['desired_capabilities'] = platform
-            d['build'] = os.environ.get('TRAVIS_JOB_NUMBER')
+            d['desired_capabilities']['build'] = os.environ.get('TRAVIS_JOB_NUMBER')
             name = "%s_%s" % (base_class.__name__, i + 1)
             module[name] = new.classobj(name, (base_class,), d)
     return decorator
@@ -85,6 +110,74 @@ class SauceSampleTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_sauce(self):
+        self.driver.get('http://saucelabs.com/test/guinea-pig')
+        assert "I am a page title - Sauce Labs" in self.driver.title
+        comments = self.driver.find_element_by_id('comments')
+        comments.send_keys('Hello! I am some example comments.'
+                           ' I should be in the page after submitting the form')
+        self.driver.find_element_by_id('submit').click()
+
+        commented = self.driver.find_element_by_id('your_comments')
+        assert ('Your comments: Hello! I am some example comments.'
+                ' I should be in the page after submitting the form'
+                in commented.text)
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' not in body.text
+        self.driver.find_elements_by_link_text('i am a link')[0].click()
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' in body.text
+
+        self.driver.get('http://saucelabs.com/test/guinea-pig')
+        assert "I am a page title - Sauce Labs" in self.driver.title
+        comments = self.driver.find_element_by_id('comments')
+        comments.send_keys('Hello! I am some example comments.'
+                           ' I should be in the page after submitting the form')
+        self.driver.find_element_by_id('submit').click()
+
+        commented = self.driver.find_element_by_id('your_comments')
+        assert ('Your comments: Hello! I am some example comments.'
+                ' I should be in the page after submitting the form'
+                in commented.text)
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' not in body.text
+        self.driver.find_elements_by_link_text('i am a link')[0].click()
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' in body.text
+
+        self.driver.get('http://saucelabs.com/test/guinea-pig')
+        assert "I am a page title - Sauce Labs" in self.driver.title
+        comments = self.driver.find_element_by_id('comments')
+        comments.send_keys('Hello! I am some example comments.'
+                           ' I should be in the page after submitting the form')
+        self.driver.find_element_by_id('submit').click()
+
+        commented = self.driver.find_element_by_id('your_comments')
+        assert ('Your comments: Hello! I am some example comments.'
+                ' I should be in the page after submitting the form'
+                in commented.text)
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' not in body.text
+        self.driver.find_elements_by_link_text('i am a link')[0].click()
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' in body.text
+
+        self.driver.get('http://saucelabs.com/test/guinea-pig')
+        assert "I am a page title - Sauce Labs" in self.driver.title
+        comments = self.driver.find_element_by_id('comments')
+        comments.send_keys('Hello! I am some example comments.'
+                           ' I should be in the page after submitting the form')
+        self.driver.find_element_by_id('submit').click()
+
+        commented = self.driver.find_element_by_id('your_comments')
+        assert ('Your comments: Hello! I am some example comments.'
+                ' I should be in the page after submitting the form'
+                in commented.text)
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' not in body.text
+        self.driver.find_elements_by_link_text('i am a link')[0].click()
+        body = self.driver.find_element_by_xpath('//body')
+        assert 'I am some other page content' in body.text
+
         self.driver.get('http://saucelabs.com/test/guinea-pig')
         assert "I am a page title - Sauce Labs" in self.driver.title
         comments = self.driver.find_element_by_id('comments')
