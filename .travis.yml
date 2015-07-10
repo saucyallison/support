@@ -1,10 +1,15 @@
-language: php
-php:
-  - 5.6
-install: curl -s https://raw.githubusercontent.com/jlipps/sausage-bun/master/givememysausage.php | SAUCE_USERNAME=awilbur_sub SAUCE_ACCESS_KEY=9c7ed686-c466-4d95-bd8b-4c69bf8469ec php
-script: vendor/bin/paratest -p 8 -f --phpunit=vendor/bin/phpunit WebDriverDemo.php
-
+language: python
+python:
+- '2.7'
+before_install: export SAUCE_TUNNEL_IDENTIFIER=$TRAVIS_JOB_NUMBER
+install:
+- pip install selenium
+- pip install sauceclient
+- pip install pytest
+script: py.test --boxed -n6 example.py
+# addons:
+#   sauce_connect: true
 env:
   global:
-  - secure: XUAxllkH156nNjEQC7MOyn0HhAlEhnbAFaXyjdqNrp5sNl/51mVrT76EqJZNwCy0iFom0Ae6wUKVDqR48tp93WzpiEsIvocMUUe3HvIyD2JyKrY/cAELGnytMkNY1IErIuoi1QrmRD4HIvhS8CVDRKpVErmONg+C+2gzwrYJ35I=
-  - secure: TtkDLBQD0PfKszKIclJ/6o397Pn/wzktUO3jTnK9srzz6Ykw/kObleKTVLuSZFIKvxuLA8dKJOTZE17fRGTXw243Mm96ZcuQ+Tp0EOH1diMr2U69yXQqCP+sn4CFNaH0nV19T7NYKWg8NwHrci+h0TaKTq/TkEJoh31Bm0ICn3Y=
+    - secure: cT2mmedgYHXwFkzYDsroBhQL4qfVj0Fe8mdk6IjFWO+mvO38JqtFta3UUwsBLVbG/Uo1MMKTM3VkUplW6eNQOXCpmFKXrSkozdoYwm/NTo0B1uJ/DQixV+Yi3pbdL+S2DQzU9mzghl2e3PDciITO77L8CByqh4ooP8XIxQs2OY0=
+    - secure: FgtwJm4pLeyRjwblargsBAtZf/e4ebd1oNCiX+CD60KveAS3KRwsPpcJEw4na3jTDmhH3OOx9y9A5z5mt4pauTJJjgSG+rIDlBHg5qxEgQ1nldL0vsLBuUgrbnLjJRBXIo9JYmNqGwKMApo5PrdiIIhJ/pT8TAODD8/hhOWZXNM=
