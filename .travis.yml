@@ -3,9 +3,7 @@ python:
 - '2.7'
 before_install: export SAUCE_TUNNEL_IDENTIFIER=$TRAVIS_JOB_NUMBER
 install:
-- pip install selenium
-- pip install sauceclient
-- pip install pytest
+- pip install selenium pytest pytest-xdist sauceclient
 script: py.test --boxed -n6 example.py
 # addons:
 #   sauce_connect: true
