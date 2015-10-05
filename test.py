@@ -27,7 +27,8 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def test_sauce(self):
         # self.driver.get('http://saucelabs.com/test/guinea-pig')
-        self.driver.get('http://localhost:8000/index.html')
+        self.driver.get('https://localhost:4443/alert.html')
+        # self.driver.get('https://localhost:8000/alert.html')
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
