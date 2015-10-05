@@ -16,8 +16,8 @@ class Selenium2OnSauce(unittest.TestCase):
         cap['platform'] = 'Windows 7'
         cap['browserName'] = 'firefox'
         cap['version'] = '32' 
-        cap['name'] = 'Travis test'    
-        cap['tunnelIdentifier'] = os.getenv('TRAVIS_JOB_NUMBER')   
+        cap['name'] = 'My test'    
+        # cap['tunnelIdentifier'] = os.getenv('TRAVIS_JOB_NUMBER')   
 
         self.driver = webdriver.Remote(
             desired_capabilities=cap,
@@ -26,7 +26,8 @@ class Selenium2OnSauce(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_sauce(self):
-        self.driver.get('http://saucelabs.com/test/guinea-pig')
+        # self.driver.get('http://saucelabs.com/test/guinea-pig')
+        self.driver.get('http://localhost:8000/index.html')
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)

@@ -1,5 +1,6 @@
 dependencies:
   post:
+    - pip install selenium
     - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
     - tar -xzf sc-latest-linux.tar.gz
 
@@ -10,4 +11,4 @@ test:
     - python -m SimpleHTTPServer:
         background: true
     - sleep 60
-    - nosetests
+    - python test.py
