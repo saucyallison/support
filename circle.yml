@@ -1,4 +1,9 @@
+machine:
+  python:
+    version: 2.7.6
 dependencies:
+  pre:
+    - pip install selenium
   post:
     - pip install selenium
     - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
