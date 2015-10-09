@@ -4,7 +4,14 @@ machine:
 dependencies:
   pre:
     - pip install selenium
+  post:
+    - wget https://saucelabs.com/downloads/sc-4.3.11-linux.tar.gz
+    - tar -xzf sc-4.3.11-linux.tar.gz
 
 test:
   override:
-    - python throwaway3.py
+    - cd sc-*-linux && ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY:
+        background: true
+    - python -m SimpleHTTPServer:
+        background: true
+    - python sleep.py
