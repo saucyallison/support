@@ -10,7 +10,7 @@ dependencies:
 
 test:
   override:
-    - cd sc-*-linux && ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY:
+    - cd sc-*-linux && ./bin/sc -s -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY:
         background: true
     - python -m SimpleHTTPServer:
         background: true
