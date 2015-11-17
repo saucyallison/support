@@ -1,0 +1,18 @@
+machine:
+  python:
+    version: 2.7.6
+dependencies:
+  pre:
+    - pip install selenium
+  post:
+    - pip install selenium
+    - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
+    - tar -xzf sc-latest-linux.tar.gz
+
+test:
+  override:
+    - cd sc-*-linux && ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -B all:
+        background: true
+    - python -m SimpleHTTPServer:
+        background: true
+    - python test.py
