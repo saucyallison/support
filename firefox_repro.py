@@ -16,7 +16,7 @@ sauce = SauceClient(USERNAME, ACCESS_KEY)
 
 browsers = []
 for i in range(1000):
-    browsers.append({'platform':"Windows 8.1", 'browserName':'firefox', 'version':'43', 'tunnelIdentifier':os.environ.get('SAUCE_TUNNEL_IDENTIFIER'), 'build':'win8.1_no_dd'})
+    browsers.append({'platform':"Windows 10", 'browserName':'firefox', 'version':'43', 'tunnelIdentifier':os.environ.get('SAUCE_TUNNEL_IDENTIFIER'), 'build':'win10_no_dd'})
 
 
 def on_platforms(platforms):
