@@ -16,7 +16,7 @@ sauce = SauceClient(USERNAME, ACCESS_KEY)
 
 browsers = []
 for i in range(100):
-    browsers.append({'platformName':'iOS', 'browserName':'safari', 'platformVersion':'8.1', 'deviceName':'iPad Simulator', 'appiumVersion':'1.4.16', 'build':'travis 8.1 repro'})
+    browsers.append({'platformName':'iOS', 'browserName':'safari', 'platformVersion':'8.1', 'deviceName':'iPad Simulator', 'appiumVersion':'1.4.14', 'build':'travis 8.1 1.4.14'})
 
 def on_platforms(platforms):
     def decorator(base_class):
