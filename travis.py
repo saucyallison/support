@@ -16,7 +16,7 @@ sauce = SauceClient(USERNAME, ACCESS_KEY)
 
 browsers = []
 for i in range(400):
-    browsers.append({'platform':'OS X 10.11', 'browserName':'Safari', 'version':'9', 'idleTimeout':'200', 'build':'Ephox Repro'})
+    browsers.append({'platform':'OS X 10.11', 'browserName':'Safari', 'version':'9', 'idleTimeout':'200', 'build':'Ephox Repro breakpoint'})
 
 def on_platforms(platforms):
     def decorator(base_class):
@@ -44,7 +44,10 @@ class SauceSampleTest(unittest.TestCase):
 
     def test_sauce(self):
         self.driver.get('http://tbio-testing.s3-website-us-west-2.amazonaws.com/archive/petrie-projects20160203133317/')
-        print self.driver.find_element_by_class_name('results')
+        try:
+            self.driver.find_element_by_class_name('results')
+        except:
+            self.driver.execute_script('sauce: break')
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
