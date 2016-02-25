@@ -16,7 +16,7 @@ sauce = SauceClient(USERNAME, ACCESS_KEY)
 
 browsers = []
 for i in range(400):
-    browsers.append({'platform':'OS X 10.9', 'browserName':'Chrome', 'version':'47', 'screenResolution':'1152x720', 'build':'Mac VNC'})
+    browsers.append({'platform':'OS X 10.11', 'browserName':'Safari', 'version':'9', 'idleTimeout':'200', 'build':'Ephox Repro'})
 
 def on_platforms(platforms):
     def decorator(base_class):
@@ -40,10 +40,11 @@ class SauceSampleTest(unittest.TestCase):
             desired_capabilities=self.desired_capabilities,
             command_executor=sauce_url % (USERNAME, ACCESS_KEY)
         )
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(199)
 
     def test_sauce(self):
-        sleep(1)
+        self.driver.get('http://tbio-testing.s3-website-us-west-2.amazonaws.com/archive/petrie-projects20160203133317/')
+        print self.driver.find_element_by_class_name('results')
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
