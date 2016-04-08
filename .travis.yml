@@ -1,13 +1,13 @@
-language: python
-python:
-- '2.7'
-before_install: export SAUCE_TUNNEL_IDENTIFIER=$TRAVIS_JOB_NUMBER
-install:
-- pip install selenium pytest pytest-xdist sauceclient
-script: py.test --boxed -n20 travis.py
-# addons:
-#   sauce_connect: true
-env:
-  global:
-    - secure: cT2mmedgYHXwFkzYDsroBhQL4qfVj0Fe8mdk6IjFWO+mvO38JqtFta3UUwsBLVbG/Uo1MMKTM3VkUplW6eNQOXCpmFKXrSkozdoYwm/NTo0B1uJ/DQixV+Yi3pbdL+S2DQzU9mzghl2e3PDciITO77L8CByqh4ooP8XIxQs2OY0=
-    - secure: FgtwJm4pLeyRjwblargsBAtZf/e4ebd1oNCiX+CD60KveAS3KRwsPpcJEw4na3jTDmhH3OOx9y9A5z5mt4pauTJJjgSG+rIDlBHg5qxEgQ1nldL0vsLBuUgrbnLjJRBXIo9JYmNqGwKMApo5PrdiIIhJ/pT8TAODD8/hhOWZXNM=
+# language: python
+# python:
+# - '2.7'
+# before_install: export SAUCE_TUNNEL_IDENTIFIER=$TRAVIS_JOB_NUMBER
+# install:
+# - pip install selenium pytest pytest-xdist sauceclient
+# script: py.test --boxed -n20 travis.py
+# # addons:
+# #   sauce_connect: true
+# env:
+#   global:
+#     - secure: cT2mmedgYHXwFkzYDsroBhQL4qfVj0Fe8mdk6IjFWO+mvO38JqtFta3UUwsBLVbG/Uo1MMKTM3VkUplW6eNQOXCpmFKXrSkozdoYwm/NTo0B1uJ/DQixV+Yi3pbdL+S2DQzU9mzghl2e3PDciITO77L8CByqh4ooP8XIxQs2OY0=
+#     - secure: FgtwJm4pLeyRjwblargsBAtZf/e4ebd1oNCiX+CD60KveAS3KRwsPpcJEw4na3jTDmhH3OOx9y9A5z5mt4pauTJJjgSG+rIDlBHg5qxEgQ1nldL0vsLBuUgrbnLjJRBXIo9JYmNqGwKMApo5PrdiIIhJ/pT8TAODD8/hhOWZXNM=
